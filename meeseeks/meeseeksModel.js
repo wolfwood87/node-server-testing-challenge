@@ -2,10 +2,8 @@ const db = require('../data/dbConfig');
 
 module.exports = {
     add,
-    update,
     remove,
-    get,
-    findById
+    get
 };
 
 async function add(meeseek) {

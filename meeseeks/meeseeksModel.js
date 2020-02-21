@@ -9,21 +9,20 @@ module.exports = {
 };
 
 async function add(meeseek) {
-    return null;
+    const [id] = await db('meeseeks').insert(meeseek, "id");
+
+    return db('meeseeks')
+        .where({id}).first()
 }
 
-async function update(id, changes) {
-    return null;
-}
 
 async function remove(id) {
-    return null;
+    const removed = await db('meeseeks').where({ id }).del();
+
+    return removed;
 }
 
 async function get() {
     return db('meeseeks');
 }
 
-async function findById(id) {
-    return null;
-}
